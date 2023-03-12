@@ -41,6 +41,16 @@ export default {
     ConfirmationModal,
   },
   setup() {
+    useHead({
+      title: 'Built with GPT - View Projects',
+      meta: [
+        {
+          name: 'description',
+          content: 'View your projects'
+        }
+      ]
+    })
+
     const client = useSupabaseClient()
 
     const projects = ref([])
@@ -122,7 +132,7 @@ export default {
 
     definePageMeta({
       layout: "authenticated",
-      middleware: "auth",
+      middleware: "auth"
     })
 
     return {

@@ -73,6 +73,16 @@ export default {
     DropZone
   },
   setup() {
+    useHead({
+      title: 'Built with GPT - Save Project',
+      meta: [
+        {
+          name: 'description',
+          content: 'Save a project to Built with GPT.'
+        }
+      ]
+    })
+
     const client = useSupabaseClient()
     const user = useSupabaseUser()
 

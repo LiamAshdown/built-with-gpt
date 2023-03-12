@@ -21,6 +21,23 @@ export default {
     HeroInfo
   },
   async setup () {
+    useHead({
+      title: 'Built with GPT',
+      meta: [
+        {
+          name: 'description',
+          content: 'Find projects built with GPT-3'
+        }
+      ]
+    })
+
+    useServerSeoMeta({
+      title: 'Built with GPT',
+      ogTitle: 'Built with GPT',
+      description: 'Find projects built with GPT-3',
+      ogDescription: 'Find projects built with GPT-3'
+    })
+
     const client = useSupabaseClient()
 
     const { data } = await useAsyncData(async () => {

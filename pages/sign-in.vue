@@ -32,6 +32,16 @@ export default {
     SignInForm
   },
   setup() {
+    useHead({
+      title: 'Built with GPT - Sign In',
+      meta: [
+        {
+          name: 'description',
+          content: 'Sign in to your Built with GPT account'
+        }
+      ]
+    })
+
     definePageMeta({
       layout: 'authenticate'
     })

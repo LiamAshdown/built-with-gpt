@@ -32,6 +32,16 @@ export default {
     SignUpForm
   },
   setup() {
+    useHead({
+      title: 'Built with GPT - Sign Up',
+      meta: [
+        {
+          name: 'description',
+          content: 'Sign up for a Built with GPT account'
+        }
+      ]
+    })
+
     definePageMeta({
       layout: 'authenticate'
     })
