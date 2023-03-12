@@ -6,16 +6,6 @@
     @mouseleave="leave"
   >
     <Item
-      text="About"
-      link="test"
-      @mouseover="hover"
-    />
-    <Item
-      text="Credits"
-      link="test"
-      @mouseover="hover"
-    />
-    <Item
       text="Github"
       link="https://github.com/LiamAshdown/built-with-gpt"
       :follow="false"

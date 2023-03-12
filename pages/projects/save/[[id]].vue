@@ -98,6 +98,7 @@ export default {
         .from('projects')
         .select('*')
         .eq('id', id)
+        .eq('user_id', user.value.id)
         .single()
 
       return { data, error }

@@ -36,6 +36,10 @@
         design="form"
         :loading="loading"
       />
+
+      <hr class="my-4 border-1 border-gray-200">
+
+      <Provider @click="onSubmitProviderHandler('github')" />
     </BaseForm>
   </Card>
 </template>
@@ -46,6 +50,7 @@ import BaseForm from '@/components/base/form/Form'
 import Alert from '@/components/base/Alert'
 import BaseButton from '@/components/base/Button'
 import Logo from '@/components/Logo'
+import Provider from '@/components/providers/Provider'
 
 export default {
   name: 'SignInFormComponent',
@@ -54,10 +59,16 @@ export default {
     Alert,
     BaseInput,
     BaseButton,
-    Logo
+    Logo,
+    Provider
   },
   props: {
     submit: {
+      type: Function,
+      required: false,
+      default: null
+    },
+    submitProvider: {
       type: Function,
       required: false,
       default: null
@@ -86,7 +97,7 @@ export default {
       required: true
     }
   },
-  emits: ['submit'],
+  emits: ['submit', 'submitProvider'],
   data () {
     return {
       form: {
@@ -98,6 +109,9 @@ export default {
   methods: {
     onSubmitHandler () {
       this.$emit('submit', this.form)
+    },
+    onSubmitProviderHandler (provider) {
+      this.$emit('submitProvider', provider)
     }
   }
 }

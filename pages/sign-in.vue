@@ -8,6 +8,7 @@
         sub-title="Sign in to your account to start submitting your GPT projects."
         button-text="Sign In"
         @submit="onSignIn"
+        @submit-provider="onSubmitProvider"
       />
       <p class="text-gray-500 text-center mt-4">
         Don't have an account? <NuxtLink
@@ -62,6 +63,12 @@ export default {
         type: 'info',
         message: route.query.reason
       }
+    }
+
+    const onSubmitProvider = (provider) => {
+      auth.signInWithOAuth({
+        provider
+      })
     }
 
     const onSignIn = async (form) => {
@@ -120,7 +127,8 @@ export default {
       errors,
       alert,
       user,
-      onSignIn
+      onSignIn,
+      onSubmitProvider
     }
   }
 }

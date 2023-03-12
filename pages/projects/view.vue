@@ -52,6 +52,7 @@ export default {
     })
 
     const client = useSupabaseClient()
+    const user = useSupabaseUser()
 
     const projects = ref([])
     const loading = ref(true)
@@ -75,9 +76,10 @@ export default {
    */
     const getProjects = async () => {
       try {
-        const { data } = await client.from("projects").select("*")
+        const { data } = await client.from("projects").select("*").eq("user_id", user.value.id)
         projects.value = data
       } catch (error) {
+        console.log(error)
         alert.value = {
           type: "error",
           message: "Something went wrong. Please try again later.",
