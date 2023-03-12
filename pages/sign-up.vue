@@ -8,6 +8,7 @@
         sub-title="Create your account to start submitting your GPT projects."
         button-text="Sign Up"
         @submit="onSignUp"
+        @submit-provider="onSubmitProvider"
       />
       <p class="text-gray-500 text-center mt-4">
         Already have an account? <NuxtLink
@@ -49,12 +50,17 @@ export default {
     const { auth } = useSupabaseAuthClient()
 
     const loading = ref(false)
+    const alert = ref(null)
     const errors = ref({
       email: null,
       password: null
     })
 
-    const alert = ref(null)
+    const onSubmitProvider = (provider) => {
+      auth.signInWithOAuth({
+        provider
+      })
+    }
 
     const onSignUp = async (form) => {
       try {
@@ -107,7 +113,8 @@ export default {
       loading,
       errors,
       alert,
-      onSignUp
+      onSignUp,
+      onSubmitProvider
     }
   }
 }

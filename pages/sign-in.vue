@@ -115,8 +115,6 @@ export default {
           type: 'error',
           message: 'Something went wrong. Please try again.'
         }
-
-        console.error(error)
       } finally {
         loading.value = false
       }
