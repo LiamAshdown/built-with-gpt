@@ -1,10 +1,10 @@
 <template>
   <div class="relative rounded-2xl bg-black mt-4 mb-8 pb-8">
-    <img
-      src="~/assets/images/hero-background.svg"
+    <nuxt-img
+      src="/images/hero-background.svg"
       class="absolute top-0 left-0 w-full h-full object-cover opacity-[0.8]"
       alt="Hero Image"
-    >
+    />
     <div class="text-gray-50 p-4 z-10 relative">
       <h3 class="text-3xl font-bold mb-2">
         What is <span class="p-1 rounded-lg leading-loose bg-white text-black mr-1">GPT</span>?
