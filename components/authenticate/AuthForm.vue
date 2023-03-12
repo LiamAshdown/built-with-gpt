@@ -44,7 +44,7 @@
 import BaseInput from '@/components/base/form/Input'
 import BaseForm from '@/components/base/form/Form'
 import Alert from '@/components/base/Alert'
-import BaseButton from '@/components/Base/Button'
+import BaseButton from '@/components/base/Button'
 import Logo from '@/components/Logo'
 
 export default {
