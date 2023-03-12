@@ -15,10 +15,10 @@ export default defineNuxtConfig({
       ssr: true
     },
     'sign-in': {
-      static: true
+      ssr: true
     },
     'sign-out': {
-      static: true
+      ssr: true
     },
   },
   app: {
