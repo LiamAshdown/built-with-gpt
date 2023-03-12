@@ -11,6 +11,7 @@
     :class="{
       'border-red-500 border-2 bg-red-100 text-red-600': alert.type === 'error',
       'border-yellow-500 border-2 bg-yellow-100 text-yellow-600': alert.type === 'warning',
+      'border-teal-500 border-2 bg-teal-100 text-teal-600': alert.type === 'info',
       'border-green-500 border-2 bg-green-100 text-green-600': alert.type === 'success',
     }"
   >

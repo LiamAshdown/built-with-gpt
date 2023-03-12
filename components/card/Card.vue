@@ -2,8 +2,9 @@
   <div
     class="mx-2
     rounded-md border border-gray-200
-    bg-white px-4 py-10
-    sm:px-10"
+    bg-white
+    px-4 py-10 sm:px-10
+    "
   >
     <template v-if="loading">
       <div class="pointer-events-none">

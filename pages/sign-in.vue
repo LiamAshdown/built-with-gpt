@@ -23,13 +23,15 @@
 
 <script>
 import { validateEmail, validatePassword } from '@/lib/utils'
+import Alert from '@/components/base/Alert'
 
 import SignInForm from '@/components/authenticate/AuthForm'
 
 export default {
   name: 'SignInPage',
   components: {
-    SignInForm
+    SignInForm,
+    Alert
   },
   setup() {
     definePageMeta({
@@ -38,14 +40,21 @@ export default {
 
     const user = useSupabaseUser()
     const { auth } = useSupabaseAuthClient()
+    const route = useRoute()
 
     const loading = ref(false)
+    const alert = ref(null)
     const errors = ref({
       email: null,
       password: null
     })
 
-    const alert = ref(null)
+    if (route.query && route.query.reason) {
+      alert.value = {
+        type: 'info',
+        message: route.query.reason
+      }
+    }
 
     const onSignIn = async (form) => {
       try {
