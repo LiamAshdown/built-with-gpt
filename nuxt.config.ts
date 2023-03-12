@@ -10,7 +10,6 @@ export default defineNuxtConfig({
   tailwindcss: {
     configPath: 'tailwind.config.ts'
   },
-  ssr: true,
   routeRules: {
     'index': {
       ssr: true
@@ -21,5 +20,13 @@ export default defineNuxtConfig({
     'sign-out': {
       static: true
     },
+  },
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: 'en'
+      },
+      title: 'Bult with GPT'
+    }
   }
 })
