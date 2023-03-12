@@ -1,0 +1,44 @@
+<template>
+  <div
+    class="
+    grid grid-cols-12
+    min-h-[250px] lg:min-h-[500px]
+    text-center md:text-left
+  "
+  >
+    <div
+      class="
+      col-span-12 md:col-span-6
+      flex flex-col justify-center
+      animate-slide-in-left
+    "
+    >
+      <h1 class="text-4xl font-bold">
+        Discover projects built with <span class="px-2 lg:p-2 rounded-lg leading-loose bg-black text-white">GPT</span>
+      </h1>
+      <p class="text-lg">
+        Find projects built with GPT and learn how to build your own.
+      </p>
+    </div>
+    <div
+      class="
+      col-span-12 md:col-span-6
+      animate-slide-in-right
+    "
+    >
+      <img
+        src="~/assets/images/robot.png"
+        alt="placeholder"
+        class="w-full"
+        width="300"
+        height="200"
+      >
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'HeroComponent'
+}
+</script>
