@@ -6,9 +6,9 @@
       alt="Hero Image"
     />
     <div class="text-gray-50 p-4 z-10 relative">
-      <h3 class="text-3xl font-bold mb-2">
+      <h2 class="text-3xl font-bold mb-2">
         What is <span class="p-1 rounded-lg leading-loose bg-white text-black mr-1">GPT</span>?
-      </h3>
+      </h2>
       <p class="text-lg">
         GPT stands for Generative Pre-trained Transformer, which is a family of large-scale language models developed by OpenAI.
         These models are designed to generate human-like text by predicting the next word in a sentence given the context of the previous words.
