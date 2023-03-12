@@ -10,8 +10,8 @@
 
 <script>
 import ArticleList from '@/components/articles/List'
-import HeroBanner from '@/components/Hero/Hero'
-import HeroInfo from '@/components/Hero/HeroInfo'
+import HeroBanner from '@/components/hero/Hero'
+import HeroInfo from '@/components/hero/HeroInfo'
 
 export default {
   name: 'IndexPage',
