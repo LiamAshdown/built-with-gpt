@@ -23,15 +23,13 @@
 
 <script>
 import { validateEmail, validatePassword } from '@/lib/utils'
-import Alert from '@/components/base/Alert'
 
 import SignInForm from '@/components/authenticate/AuthForm'
 
 export default {
   name: 'SignInPage',
   components: {
-    SignInForm,
-    Alert
+    SignInForm
   },
   setup() {
     definePageMeta({

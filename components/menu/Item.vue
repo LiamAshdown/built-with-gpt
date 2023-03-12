@@ -8,8 +8,14 @@
     hover:text-white
     transition-all duration-100
     nav-item
-    ">
-    <a href="/">{{ text }}</a>
+    "
+  >
+    <NuxtLink
+      :to="link"
+      :rel="!follow ? 'noopener noreferrer' : ''"
+    >
+      {{ text }}
+    </NuxtLink>
   </li>
 </template>
 
@@ -20,6 +26,14 @@ export default {
     text: {
       type: String,
       required: true
+    },
+    link: {
+      type: String,
+      required: true
+    },
+    follow: {
+      type: Boolean,
+      default: true
     }
   }
 }

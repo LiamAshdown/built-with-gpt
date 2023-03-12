@@ -1,20 +1,37 @@
 <template>
-  <ul class="
+  <ul
+    class="
     border-2 border-black border-solid flex rounded-full gap-0 p-1 justify-center relative
   "
-  @mouseleave="leave"
+    @mouseleave="leave"
   >
-    <Item text="About" @mouseover="hover"/>
-    <Item text="Credits" @mouseover="hover"/>
-    <Item text="Links" @mouseover="hover"/>
-    <li class="
+    <Item
+      text="About"
+      link="test"
+      @mouseover="hover"
+    />
+    <Item
+      text="Credits"
+      link="test"
+      @mouseover="hover"
+    />
+    <Item
+      text="Github"
+      link="https://github.com/LiamAshdown/built-with-gpt"
+      :follow="false"
+      @mouseover="hover"
+    />
+    <li
+      ref="bg"
+      class="
       absolute bg-black w-20 h-full top-0 left-0 -z-10
       transition-all duration-300 ease-in-out
       rounded-full
       border-2 border-white border-solid
       hidden
       nav-item-bg
-      " ref="bg"></li>
+      "
+    />
   </ul>
 </template>
 

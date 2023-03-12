@@ -11,21 +11,27 @@
       "
     >
       <div>
-        <div class="border-dashed border-b-2 borde  r-spacing-x-2 border-black">
-          <nuxt-img
-            :src="article.image_url"
-            alt="placeholder"
-            class="w-full"
-            placeholder
-            width="300"
-            height="200"
-          />
+        <div class="border-dashed border-b-2 border-spacing-x-2 border-black">
+          <nuxt-link
+            :to="article.website_url"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <nuxt-img
+              :src="article.image_url"
+              alt="placeholder"
+              class="w-full"
+              placeholder
+              width="300"
+              height="200"
+            />
+          </nuxt-link>
         </div>
-        <div class="pt-2 p-4 bg-gray-50">
-          <h2 class="text-2xl lg:text-3xl font-bold">
+        <div class="p-4 bg-gray-50">
+          <h2 class="text-2xl font-bold">
             {{ article.title }}
           </h2>
-          <p class="text-base lg:text-lg">
+          <p class="text-base">
             {{ article.description }}
           </p>
         </div>

@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>
+    <div class="pb-24">
       <HeroBanner />
       <HeroInfo />
       <ArticleList :articles="projects" />
