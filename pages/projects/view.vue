@@ -79,7 +79,6 @@ export default {
         const { data } = await client.from("projects").select("*").eq("user_id", user.value.id)
         projects.value = data
       } catch (error) {
-        console.log(error)
         alert.value = {
           type: "error",
           message: "Something went wrong. Please try again later.",
