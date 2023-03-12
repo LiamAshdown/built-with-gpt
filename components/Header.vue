@@ -26,7 +26,7 @@
 
 <script>
 import MenuList from '@/components/menu/Menu'
-import BaseButton from '@/components/Base/Button'
+import BaseButton from '@/components/base/Button'
 import Logo from '@/components/Logo'
 
 export default {
