@@ -47,6 +47,7 @@ export default {
       layout: 'authenticate'
     })
 
+    const user = useSupabaseUser()
     const { auth } = useSupabaseAuthClient()
 
     const loading = ref(false)
@@ -95,7 +96,15 @@ export default {
             message: response.error.message
           }
         } else {
-          navigateTo('/projects/save')
+          // There's an issue where it takes a few seconds for the user to be set
+          // in the store. So we'll wait for it to be set before navigating
+          watchEffect(async () => {
+            if (user.value) {
+              navigateTo({
+                name: 'projects-save-id'
+              })
+            }
+          })
         }
       } catch {
         // If we get to here this means something has gone wrong on server end or our end

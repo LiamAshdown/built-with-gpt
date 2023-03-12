@@ -102,10 +102,14 @@ export default {
             message: response.error.message
           }
         } else {
-          // Authentication was successful
-          // Redirect the user to the dashboard
-          navigateTo({
-            name: 'projects-view'
+          // There's an issue where it takes a few seconds for the user to be set
+          // in the store. So we'll wait for it to be set before navigating
+          watchEffect(async () => {
+            if (user.value) {
+              navigateTo({
+                name: 'projects-view'
+              })
+            }
           })
         }
       } catch (error) {
@@ -124,7 +128,6 @@ export default {
       loading,
       errors,
       alert,
-      user,
       onSignIn,
       onSubmitProvider
     }
