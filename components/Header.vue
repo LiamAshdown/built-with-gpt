@@ -55,7 +55,7 @@ export default {
     const onAddProject = async () => {
       if (!(await auth.getUser()).data.user) {
         navigateTo({
-          name: 'sign-in'
+          name: 'sign-up'
         })
       } else {
         if (route.name === 'projects-save-id') {

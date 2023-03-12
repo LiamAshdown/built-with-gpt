@@ -22,14 +22,14 @@
           v-model="form.websiteUrl"
           label="Website URL"
           placeholder="https://example.com"
-          hint="The URL of your website"
+          hint="The URL of your website. E.g https://google.com"
           :error="errors.websiteUrl"
         />
 
         <DropZone
           class="mb-2"
           :value="form.image"
-          hint="This will be the image that will be displayed on the website. Preferably 300x200px"
+          hint="Recommended image size is 300x200 and maximum file size is 4MB."
           :error="errors.image"
           @input="form.image = $event"
         />
@@ -43,6 +43,7 @@
           text="Save"
           type="submit"
           design="form"
+          class="mt-10"
           :loading="loading"
         />
       </BaseForm>

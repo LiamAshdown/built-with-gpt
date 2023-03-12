@@ -14,6 +14,7 @@
       <input
         ref="fileInput"
         type="file"
+        accept="image/*"
         class="hidden"
         @change="onFileSelected"
       >
@@ -123,10 +124,17 @@ export default {
       const reader = new FileReader()
       reader.readAsDataURL(file)
       reader.onload = () => {
-        // Emit the file to the parent component
-        this.$emit('input', file)
+        console.log(file.type)
+        // Check if the file is an image
+        if (file.type.includes('image')) {
+          this.previewUrl = reader.result
+          this.$emit('input', file)
 
-        this.previewUrl = reader.result
+          return
+        }
+
+        // If the file is not an image, set the previewUrl to null
+        this.previewUrl = null
       }
     }
   }
