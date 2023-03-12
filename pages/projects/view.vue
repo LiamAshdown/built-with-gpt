@@ -28,7 +28,7 @@
 
 <script>
 import ProjectsTable from "@/components/projects/Table"
-import Card from "@/components/Card/Card"
+import Card from "@/components/card/Card"
 import Alert from "@/components/base/Alert"
 import ConfirmationModal from "@/components/modal/Confirmation"
 
