@@ -21,5 +21,8 @@
     "eslint-plugin-vue": "^9.9.0",
     "nuxt": "^3.2.3",
     "nuxt-icon": "^0.3.2"
+  },
+  "dependencies": {
+    "@vercel/analytics": "^0.1.11"
   }
 }

@@ -7,6 +7,12 @@ export default defineNuxtConfig({
     '@nuxtjs/supabase',
     'nuxt-icon'
   ],
+  plugins: [
+    {
+      src: '~/plugins/vercel.js',
+      mode: 'client'
+    }
+  ],
   tailwindcss: {
     configPath: 'tailwind.config.ts'
   },
