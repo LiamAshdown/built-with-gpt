@@ -11,7 +11,7 @@
       "
     >
       <div>
-        <div class="border-dashed border-b-2 border-spacing-x-2 border-black">
+        <div class="border-dashed border-b-2 border-spacing-x-2 border-black bg-gray-50">
           <nuxt-link
             :to="article.website_url"
             rel="noopener noreferrer"
@@ -27,7 +27,7 @@
             />
           </nuxt-link>
         </div>
-        <div class="p-4 bg-gray-50">
+        <div class="p-4">
           <h2 class="text-2xl font-bold">
             {{ article.title }}
           </h2>

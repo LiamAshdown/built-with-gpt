@@ -1,6 +1,14 @@
 <template>
   <div>
     <Card :loading="initialLoading">
+      <h1 class="text-3xl font-bold text-center font-inter mb-3">
+        <template v-if="!isEdit()">
+          Create a new project
+        </template>
+        <template v-else>
+          Edit project
+        </template>
+      </h1>
       <BaseForm
         :disabled="loading"
         @submit="onSubmit"
@@ -266,6 +274,12 @@ export default {
     }
   },
   methods: {
+    /**
+     * Check if the form is in edit mode.
+     */
+    isEdit () {
+      return this.$route.params.id
+    },
     /**
      * Handle form submission.
      */
