@@ -37,7 +37,7 @@
         <DropZone
           class="mb-2"
           :value="form.image"
-          hint="Recommended image size is 300x200 and maximum file size is 4MB."
+          hint="Recommended image size is 800x600px and maximum file size is 4MB."
           :error="errors.image"
           @input="form.image = $event"
         />

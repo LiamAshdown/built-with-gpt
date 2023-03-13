@@ -22,8 +22,7 @@
               alt="placeholder"
               class="w-full"
               placeholder
-              width="300"
-              height="200"
+              fit="cover"
             />
           </nuxt-link>
         </div>
