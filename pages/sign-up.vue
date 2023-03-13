@@ -95,16 +95,6 @@ export default {
             type: 'error',
             message: response.error.message
           }
-        } else {
-          // There's an issue where it takes a few seconds for the user to be set
-          // in the store. So we'll wait for it to be set before navigating
-          watchEffect(async () => {
-            if (user.value) {
-              navigateTo({
-                name: 'projects-save-id'
-              })
-            }
-          })
         }
       } catch {
         // If we get to here this means something has gone wrong on server end or our end
@@ -117,6 +107,17 @@ export default {
         loading.value = false
       }
     }
+
+    // There's an issue where it takes a few seconds for the user to be set
+    // in the store. So we'll wait for it to be set before navigating
+    // This will also prevent the user from seeing the sign in page if they are already signed in
+    watchEffect(async () => {
+      if (user.value) {
+        navigateTo({
+          name: 'projects-view'
+        })
+      }
+    })
 
     return {
       loading,
