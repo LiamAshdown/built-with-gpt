@@ -15,11 +15,18 @@
     <div>
       <MenuList />
     </div>
-    <div>
+    <div class="flex gap-1">
       <BaseButton
         :text="projectText"
         @click="onAddProject"
       />
+      <template v-if="isSignedIn">
+        <BaseButton
+          text="Sign Out"
+          variant="red"
+          @click="onSignOut"
+        />
+      </template>
     </div>
   </div>
 </template>
@@ -29,6 +36,13 @@ import MenuList from '@/components/menu/Menu'
 import BaseButton from '@/components/base/Button'
 import Logo from '@/components/Logo'
 
+/**
+ * Header component for the app
+ *
+ * @component Header
+ * @example
+ * <Header />
+ */
 export default {
   name: 'HeaderComponent',
   components: {
@@ -38,10 +52,25 @@ export default {
   },
   setup() {
     const { auth } = useSupabaseAuthClient()
+    const user = useSupabaseUser()
     const route = useRoute()
 
+    /**
+     * Ref to store the text of the "Add Project" button
+     *
+     * @memberof HeaderComponent
+     * @name projectText
+     * @type {Ref<string>}
+     */
     const projectText = ref('Add Project')
 
+    /**
+     * Updates the text of the "Add Project" button based on the current route
+     *
+     * @memberof HeaderComponent
+     * @function updateProjectText
+     * @returns {void}
+     */
     const updateProjectText = () => {
       if (route.name === 'projects-save-id') {
         projectText.value = 'View Projects'
@@ -50,8 +79,13 @@ export default {
       }
     }
 
-    watch(() => route.path, updateProjectText)
-
+      /**
+     * Handler function for clicking the "Add Project" button
+     *
+     * @memberof HeaderComponent
+     * @function onAddProject
+     * @returns {void}
+     */
     const onAddProject = async () => {
       if (!(await auth.getUser()).data.user) {
         navigateTo({
@@ -70,11 +104,46 @@ export default {
       }
     }
 
-    updateProjectText()
+    /**
+     * Computed property to check if the user is signed in
+     *
+     * @memberof HeaderComponent
+     * @name isSignedIn
+     * @type {ComputedRef<boolean>}
+     */
+    const isSignedIn = computed(() => {
+      return user.value !== null
+    })
+
+    /**
+     * Handler function for clicking the "Sign Out" button
+     *
+     * @memberof HeaderComponent
+     * @function onSignOut
+     * @returns {void}
+     */
+    const onSignOut = async () => {
+      await auth.signOut()
+
+      navigateTo({
+        name: 'sign-up'
+      })
+    }
+
+    watch(() => route.path, updateProjectText)
+
+    /**
+     * Mounted hook to update the text of the "Add Project" button
+     */
+    onMounted(() => {
+      updateProjectText()
+    })
 
     return {
       onAddProject,
-      projectText
+      projectText,
+      isSignedIn,
+      onSignOut
     }
   }
 }

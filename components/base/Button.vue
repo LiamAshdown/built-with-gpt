@@ -2,7 +2,6 @@
   <div>
     <button
       class="
-    bg-black text-white
     text-center
     transition-all duration-300
     cursor-pointer
@@ -24,7 +23,10 @@
 
         'opacity-70': loading,
         'hover:opacity-70': loading,
-        'pointer-events-none': loading
+        'pointer-events-none': loading,
+
+        'bg-black text-white': variant === 'black',
+        'bg-red-500 text-white': variant === 'red',
       }"
     >
       <template v-if="loading">
@@ -73,6 +75,11 @@ export default {
       type: String,
       required: false,
       default: 'standard'
+    },
+    variant: {
+      type: String,
+      required: false,
+      default: 'black'
     }
   }
 }

@@ -17,7 +17,7 @@
           Discover projects built with <span class="px-2 lg:p-2 rounded-lg leading-loose bg-black text-white">GPT</span>
         </h1>
         <p class="text-lg">
-          Find projects built with GPT and learn how to build your own.
+          Find projects built with GPT-3, DALL-E, and other AI models.
         </p>
       </div>
     </div>
