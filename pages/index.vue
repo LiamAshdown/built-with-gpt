@@ -34,8 +34,8 @@ export default {
     useServerSeoMeta({
       title: 'Built with GPT',
       ogTitle: 'Built with GPT',
-      description: 'Find projects built with GPT-3',
-      ogDescription: 'Find projects built with GPT-3'
+      description: 'Find projects built with GPT-3, DALL-E, and other AI models.',
+      ogDescription: 'Find projects built with GPT-3, DALL-E, and other AI models.'
     })
 
     const client = useSupabaseClient()
