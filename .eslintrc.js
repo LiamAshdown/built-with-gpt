@@ -14,7 +14,8 @@ module.exports = {
     sourceType: 'module'
   },
   globals: {
-    'defineEventHandler' : 'readonly'
+    'defineEventHandler' : 'readonly',
+    'defineNuxtPlugin' : 'readonly'
   },
   plugins: [
     'vue'

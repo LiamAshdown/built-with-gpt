@@ -1,7 +1,6 @@
 <template>
-  <div>
-    <div
-      class="
+  <div
+    class="
       border-solid border-t-4 border-r-4 border-b-4 border-l-[17px] border-black
       rounded-3xl overflow-hidden min-h-full
       transform
@@ -9,31 +8,30 @@
       duration-300
       hover:scale-105
       "
-    >
-      <div>
-        <div class="border-dashed border-b-2 border-spacing-x-2 border-black bg-gray-50">
-          <nuxt-link
-            :to="article.website_url"
-            rel="noopener noreferrer"
-            target="_blank"
-          >
-            <nuxt-img
-              :src="article.image_url"
-              :alt="article.title"
-              class="w-full"
-              loading="lazy"
-              fit="cover"
-            />
-          </nuxt-link>
-        </div>
-        <div class="p-4">
-          <h2 class="text-2xl font-bold">
-            {{ article.title }}
-          </h2>
-          <p class="text-base">
-            {{ article.description }}
-          </p>
-        </div>
+  >
+    <div>
+      <div class="border-dashed border-b-2 border-spacing-x-2 border-black bg-gray-50">
+        <nuxt-link
+          :to="article.website_url"
+          rel="noopener noreferrer"
+          target="_blank"
+        >
+          <nuxt-img
+            :src="article.image_url"
+            :alt="article.title"
+            class="w-full"
+            loading="lazy"
+            fit="cover"
+          />
+        </nuxt-link>
+      </div>
+      <div class="p-4">
+        <h2 class="text-2xl font-bold">
+          {{ article.title }}
+        </h2>
+        <p class="text-base">
+          {{ article.description }}
+        </p>
       </div>
     </div>
   </div>

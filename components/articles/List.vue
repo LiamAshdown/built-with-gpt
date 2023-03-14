@@ -8,6 +8,7 @@
     <ArticleItem
       v-for="article in articles"
       :key="article.id"
+      v-in-view="'in-view'"
       :article="article"
     />
   </div>

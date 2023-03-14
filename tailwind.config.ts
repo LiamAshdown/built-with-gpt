@@ -16,6 +16,9 @@ export default <Partial<Config>>{
       inter: ['Inter', 'sans-serif']
     },
     extend: {
+      scale: {
+        'in-view': '1.05',
+      },
       animation: {
         'slide-in-left': 'slide-in-left 0.5s ease-out',
         'slide-in-right': 'slide-in-right 0.5s ease-out'

@@ -8,3 +8,11 @@ body {
     background-color: #f3f4f6;
     overflow-x: hidden;
 }
+
+@layer utilities {
+    @media (max-width: 420px) {
+        .in-view {
+            @apply scale-in-view;
+        }
+    }
+}
