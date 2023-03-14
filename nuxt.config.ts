@@ -32,7 +32,14 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: 'en'
       },
-      title: 'Bult with GPT'
+      title: 'Bult with GPT',
+      // Add google site verification
+      meta: [
+        {
+          name: 'google-site-verification',
+          content: process.env.GOOGLE_SITE_VERIFICATION
+        }
+      ]
     }
   }
 })
