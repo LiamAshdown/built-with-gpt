@@ -1,5 +1,5 @@
 <template>
-  <Card class="py-10">
+  <Card>
     <div class="flex items-center justify-center gap-2">
       <Logo /> <span class="font-bold text-2xl">is free to use</span>
     </div>
