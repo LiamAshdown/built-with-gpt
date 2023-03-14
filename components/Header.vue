@@ -15,7 +15,12 @@
     <div>
       <MenuList />
     </div>
-    <div class="flex gap-1">
+    <div
+      class="
+      flex flex-col gap-1 justify-center
+      sm:flex-row sm:gap-3
+    "
+    >
       <BaseButton
         :text="projectText"
         @click="onAddProject"
