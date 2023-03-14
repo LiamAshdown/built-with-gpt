@@ -4,7 +4,7 @@
       <h1
         class="
         text-1xl font-bold text-center font-inter mb-3
-        md:text-3xl
+        md:text-2xl lg:text-3xl
         "
       >
         <template v-if="!isEdit()">
