@@ -38,8 +38,21 @@ export default defineNuxtConfig({
         {
           name: 'google-site-verification',
           content: process.env.GOOGLE_SITE_VERIFICATION
-        }
-      ]
+        },
+        // Add OG tags
+        {
+          property: 'og:title',
+          content: 'Built with GPT'
+        },
+        {
+          property: 'og:description',
+          content: 'Find projects built with GPT-3, DALL-E, and other AI models.'
+        },
+        {
+          property: 'og:image',
+          content: process.env.OG_IMAGE_URL
+        },
+      ],
     }
   }
 })
