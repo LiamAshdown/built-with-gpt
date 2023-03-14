@@ -1,7 +1,7 @@
 <template>
   <Card>
     <div class="flex items-center justify-center gap-2">
-      <Logo /> <span class="font-bold text-2xl">is free to use</span>
+      <h1><Logo /> <span class="font-bold text-2xl">is free to use</span></h1>
     </div>
     <p class="text-sm text-center text-gray-500 font-inter font-thin mt-2">
       {{ subTitle }}
