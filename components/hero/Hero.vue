@@ -12,7 +12,7 @@
       flex flex-col justify-center
     "
     >
-      <div class="animate-slide-in-left">
+      <div class="animate-slide-in-left relative">
         <h1 class="text-4xl font-bold">
           Discover projects built with <span class="px-2 lg:p-2 rounded-lg leading-loose bg-black text-white">GPT</span>
         </h1>
@@ -24,10 +24,9 @@
     <div
       class="
       col-span-12 md:col-span-6
-      relative
     "
     >
-      <div class="animate-slide-in-right">
+      <div class="animate-slide-in-right relative">
         <nuxt-img
           src="/images/robot.png"
           alt="GPT Robot"
