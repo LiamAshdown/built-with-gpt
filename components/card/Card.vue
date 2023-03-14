@@ -4,6 +4,7 @@
     rounded-md border border-gray-200
     bg-white
     p-4
+    sm:px-10
     "
   >
     <template v-if="loading">
