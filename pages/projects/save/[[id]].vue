@@ -1,7 +1,12 @@
 <template>
   <div>
     <Card :loading="initialLoading">
-      <h1 class="text-3xl font-bold text-center font-inter mb-3">
+      <h1
+        class="
+        text-1xl font-bold text-center font-inter mb-3
+        md:text-2xl lg:text-3xl
+        "
+      >
         <template v-if="!isEdit()">
           Create a new project
         </template>
