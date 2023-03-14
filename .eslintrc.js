@@ -13,6 +13,9 @@ module.exports = {
     ecmaVersion: 'latest',
     sourceType: 'module'
   },
+  globals: {
+    'defineEventHandler' : 'readonly'
+  },
   plugins: [
     'vue'
   ],

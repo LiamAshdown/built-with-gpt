@@ -124,7 +124,6 @@ export default {
       const reader = new FileReader()
       reader.readAsDataURL(file)
       reader.onload = () => {
-        console.log(file.type)
         // Check if the file is an image
         if (file.type.includes('image')) {
           this.previewUrl = reader.result

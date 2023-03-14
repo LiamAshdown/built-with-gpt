@@ -19,9 +19,9 @@
           >
             <nuxt-img
               :src="article.image_url"
-              alt="placeholder"
+              :alt="article.title"
               class="w-full"
-              placeholder
+              loading="lazy"
               fit="cover"
             />
           </nuxt-link>

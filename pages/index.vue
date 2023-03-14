@@ -38,19 +38,10 @@ export default {
       ogDescription: 'Find projects built with GPT-3, DALL-E, and other AI models.'
     })
 
-    const client = useSupabaseClient()
-
-    const { data } = await useAsyncData(async () => {
-      const { data } = await client
-        .from('projects')
-        .select('*')
-        .order('id', { ascending: false })
-
-      return { data }
-    })
+    const { data } = await useAsyncData('projects', () => $fetch('/api/projects'))
 
     return {
-      projects: data.value.data
+      projects: data.value.projects
     }
   }
 }
