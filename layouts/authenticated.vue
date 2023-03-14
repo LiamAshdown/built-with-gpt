@@ -1,7 +1,9 @@
 <template>
   <div class="container mx-auto">
     <TopHeader />
-    <slot />
+    <div class="md:pt-10">
+      <slot />
+    </div>
   </div>
 </template>
 
