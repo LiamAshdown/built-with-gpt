@@ -39,6 +39,10 @@ export default defineNuxtConfig({
           name: 'google-site-verification',
           content: process.env.GOOGLE_SITE_VERIFICATION
         },
+        {
+          name: 'description',
+          content: 'Discover Inspiring Projects Built with GPT Technology: Find Your Next Idea Here!'
+        },
         // Add OG tags
         {
           property: 'og:title',
@@ -46,7 +50,7 @@ export default defineNuxtConfig({
         },
         {
           property: 'og:description',
-          content: 'Find projects built with GPT-3, DALL-E, and other AI models.'
+          content: 'Discover Inspiring Projects Built with GPT Technology: Find Your Next Idea Here!'
         },
         {
           property: 'og:image',

@@ -21,21 +21,6 @@ export default {
     HeroInfo
   },
   async setup () {
-    useHead({
-      title: 'Built with GPT',
-      meta: [
-        {
-          name: 'description',
-          content: 'Find projects built with GPT-3'
-        }
-      ]
-    })
-
-    useServerSeoMeta({
-      title: 'Built with GPT',
-      description: 'Find projects built with GPT-3, DALL-E, and other AI models.'
-    })
-
     const { data } = await useAsyncData('projects', () => $fetch('/api/projects'))
 
     return {
