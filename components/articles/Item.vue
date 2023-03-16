@@ -10,21 +10,26 @@
       "
   >
     <div>
-      <div class="border-dashed border-b-2 border-spacing-x-2 border-black bg-gray-50">
-        <nuxt-link
-          :to="article.website_url"
-          rel="noopener noreferrer"
-          target="_blank"
-        >
-          <nuxt-img
-            :src="article.image_url"
-            :placeholder="article.placeholder_url || null"
-            :alt="article.title"
-            class="w-full"
-            loading="lazy"
-            fit="cover"
-          />
-        </nuxt-link>
+      <div
+        class="border-dashed border-b-2 border-spacing-x-2 border-black bg-gray-50
+      "
+      >
+        <div class="w-full h-[200px]">
+          <nuxt-link
+            :to="article.website_url"
+            rel="noopener noreferrer"
+            target="_blank"
+          >
+            <nuxt-img
+              :src="article.image_url"
+              :placeholder="article.placeholder_url || null"
+              :alt="article.title"
+              class="w-full h-full"
+              loading="lazy"
+              fit="cover"
+            />
+          </nuxt-link>
+        </div>
       </div>
       <div class="p-4">
         <h2 class="text-2xl font-bold">
