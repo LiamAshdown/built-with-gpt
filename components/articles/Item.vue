@@ -17,7 +17,7 @@
         <div class="w-full h-[200px]">
           <nuxt-link
             :to="article.website_url"
-            rel="noopener noreferrer"
+            rel="noopener nofollow"
             target="_blank"
           >
             <nuxt-img
