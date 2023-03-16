@@ -5,7 +5,13 @@
         <tr>
           <th
             scope="col"
-            class="px-6 py-3 text-xs font-bold text-left text-white uppercase"
+            class="
+              px-6 py-3
+              text-xs font-bold text-left text-white
+              uppercase
+              hidden
+              sm:block
+              "
           >
             ID
           </th>
@@ -17,7 +23,13 @@
           </th>
           <th
             scope="col"
-            class="px-6 py-3 text-xs font-bold text-left text-white uppercase"
+            class="
+              px-6 py-3
+              text-xs font-bold text-left text-white
+              uppercase
+              hidden
+              sm:block
+              "
           >
             Website URL
           </th>
@@ -56,7 +68,7 @@
             :key="project.id"
           >
             <td
-              class="px-6 py-4 text-sm text-gray-800 whitespace-nowrap"
+              class="px-6 py-4 text-sm text-gray-800 whitespace-nowrap hidden sm:block"
             >
               {{ project.id }}
             </td>
@@ -66,7 +78,7 @@
               {{ project.title }}
             </td>
             <td
-              class="px-6 py-4 text-sm text-gray-800 whitespace-nowrap"
+              class="px-6 py-4 text-sm text-gray-800 whitespace-nowrap hidden sm:block"
             >
               {{ project.website_url }}
             </td>
