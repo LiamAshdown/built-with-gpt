@@ -58,10 +58,10 @@ export default {
       password: null
     })
 
-    if (route.query && route.query.reason) {
+    if (route.query && route.query.expired) {
       alert.value = {
         type: 'info',
-        message: route.query.reason
+        message: 'Your session has expired. Please sign in again.'
       }
     }
 

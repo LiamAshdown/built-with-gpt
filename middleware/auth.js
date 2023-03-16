@@ -6,7 +6,7 @@ export default defineNuxtRouteMiddleware(async () => {
     return navigateTo({
       name: 'sign-in',
       query: {
-        reason: 'You must be signed in to access this page'
+        expired: true
       }
     })
   }
