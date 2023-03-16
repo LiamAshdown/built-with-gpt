@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="mb-8">
     <Card :loading="initialLoading">
       <h1
         class="
