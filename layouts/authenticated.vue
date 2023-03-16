@@ -1,5 +1,5 @@
 <template>
-  <div class="container mx-auto">
+  <div class="container mx-auto mb-8 ">
     <TopHeader />
     <div class="md:pt-10">
       <slot />

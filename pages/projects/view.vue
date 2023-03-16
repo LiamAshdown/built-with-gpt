@@ -1,5 +1,5 @@
 <template>
-  <div class="mt-10">
+  <div class="mt-4 sm:mt-10">
     <h1 class="text-3xl font-bold text-center">
       Your Projects
     </h1>

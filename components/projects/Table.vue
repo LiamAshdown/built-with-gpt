@@ -3,48 +3,17 @@
     <table class="min-w-full divide-y divide-gray-200">
       <thead class="bg-black">
         <tr>
-          <th
-            scope="col"
-            class="
-              px-6 py-3
-              text-xs font-bold text-left text-white
-              uppercase
-              hidden
-              sm:block
-              "
-          >
-            ID
-          </th>
-          <th
-            scope="col"
-            class="px-6 py-3 text-xs font-bold text-left text-white uppercase"
-          >
-            Project Name
-          </th>
-          <th
-            scope="col"
-            class="
-              px-6 py-3
-              text-xs font-bold text-left text-white
-              uppercase
-              hidden
-              sm:block
-              "
-          >
-            Website URL
-          </th>
-          <th
-            scope="col"
-            class="px-6 py-3 text-xs font-bold text-right text-white uppercase"
-          >
-            Edit
-          </th>
-          <th
-            scope="col"
-            class="px-6 py-3 text-xs font-bold text-right text-white uppercase"
-          >
-            Delete
-          </th>
+          <THeader
+            :text="'ID'"
+            hide
+          />
+          <THeader :text="'Project Name'" />
+          <THeader
+            :text="'Website URL'"
+            hide
+          />
+          <THeader :text="'Edit'" />
+          <THeader :text="'Delete'" />
         </tr>
       </thead>
       <tbody class="divide-y divide-gray-200">
@@ -125,8 +94,13 @@
 </template>
 
 <script>
+import THeader from '@/components/base/table/Th'
+
 export default {
   name: 'ProjectsTableComponent',
+  components: {
+    THeader
+  },
   props: {
     projects: {
       type: Array,
