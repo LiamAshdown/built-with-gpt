@@ -58,10 +58,10 @@
               {{ project.website_url }}
             </td>
             <td
-              class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap"
+              class="px-6 py-4 text-sm font-medium text-center whitespace-nowrap"
             >
               <nuxt-link
-                class="text-green-500 hover:text-green-700 text-center"
+                class="text-green-500 hover:text-green-700"
                 :to="{
                   name: 'projects-save-id',
                   params: {
@@ -73,7 +73,7 @@
               </nuxt-link>
             </td>
             <td
-              class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap text-center"
+              class="px-6 py-4 text-sm font-medium text-center whitespace-nowrap"
             >
               <div
                 class="text-red-500 hover:text-red-700 cursor-pointer"
