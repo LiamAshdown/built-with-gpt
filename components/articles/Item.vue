@@ -18,6 +18,7 @@
         >
           <nuxt-img
             :src="article.image_url"
+            :placeholder="article.placeholder_url || null"
             :alt="article.title"
             class="w-full"
             loading="lazy"
