@@ -12,8 +12,14 @@
             :text="'Website URL'"
             hide
           />
-          <THeader :text="'Edit'" />
-          <THeader :text="'Delete'" />
+          <THeader
+            :text="'Edit'"
+            class="text-center"
+          />
+          <THeader
+            :text="'Delete'"
+            class="text-center"
+          />
         </tr>
       </thead>
       <tbody class="divide-y divide-gray-200">
@@ -55,7 +61,7 @@
               class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap"
             >
               <nuxt-link
-                class="text-green-500 hover:text-green-700"
+                class="text-green-500 hover:text-green-700 text-center"
                 :to="{
                   name: 'projects-save-id',
                   params: {
@@ -67,7 +73,7 @@
               </nuxt-link>
             </td>
             <td
-              class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap"
+              class="px-6 py-4 text-sm font-medium text-right whitespace-nowrap text-center"
             >
               <div
                 class="text-red-500 hover:text-red-700 cursor-pointer"
