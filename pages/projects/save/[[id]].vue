@@ -125,7 +125,7 @@ export default {
      */
     const saveProject = async (form) => {
 
-      let flashMessage = 'Project created successfully!'
+      let flashMessage = 'Project created successfully! Your project is now live!'
 
       if (route.params.id) {
         const { data, error } = await client
