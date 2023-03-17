@@ -15,7 +15,9 @@ module.exports = {
   },
   globals: {
     'defineEventHandler' : 'readonly',
-    'defineNuxtPlugin' : 'readonly'
+    'defineNuxtPlugin' : 'readonly',
+    'readBody' : 'readonly',
+    'readMultipartFormData' : 'readonly'
   },
   plugins: [
     'vue'

@@ -24,7 +24,12 @@
               :src="article.image_url"
               :placeholder="article.placeholder_url || null"
               :alt="article.title"
-              class="w-full h-full"
+              class="
+              w-full
+              h-full
+              transition-all duration-500
+              hover:scale-105
+              "
               loading="lazy"
               fit="cover"
             />

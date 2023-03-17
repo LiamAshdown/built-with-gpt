@@ -23,6 +23,7 @@
     "nuxt-icon": "^0.3.2"
   },
   "dependencies": {
-    "@vercel/analytics": "^0.1.11"
+    "@vercel/analytics": "^0.1.11",
+    "sharp": "^0.31.3"
   }
 }

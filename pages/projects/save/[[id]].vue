@@ -171,10 +171,15 @@ export default {
       // Generate a unique ID for the file without library
       const id = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15)
 
-      // Upload to 'built-with-gpt' bucket under projects folder
-      const { data, error } = await client.storage
-        .from('built-with-gpt')
-        .upload(`${user.value.id}/projects/${id}`, file)
+      const formData = new FormData()
+      formData.append('file', file)
+      formData.append('id', id)
+      formData.append('userId', user.value.id)
+
+      const { data, error } = await $fetch('/api/upload-image', {
+        method: 'POST',
+        body: formData
+      })
 
       return {
         uploadData: data,
