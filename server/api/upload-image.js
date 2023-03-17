@@ -41,13 +41,7 @@ export default defineEventHandler(async (event) => {
       .resize({
         width: 1920,
         height: 1080,
-        fit: 'contain',
-        background: {
-          r: 0,
-          g: 0,
-          b: 0,
-          alpha: 0
-        }
+        fit: 'fill'
       })
 
     // Convert the resized image to webp format.

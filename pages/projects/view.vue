@@ -76,7 +76,7 @@ export default {
    */
     const getProjects = async () => {
       try {
-        const { data } = await client.from("projects").select("*").eq("user_id", user.value.id)
+        const { data } = await client.from("projects").select("*").eq("user_id", user.value.id).order("created_at", { ascending: false })
         projects.value = data
       } catch (error) {
         alert.value = {
