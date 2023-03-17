@@ -128,6 +128,8 @@ export default {
       let flashMessage = 'Project created successfully! Your project is now live!'
 
       if (route.params.id) {
+        console.log('hit')
+        console.log('here', route.params.id)
         const { data, error } = await client
           .from('projects')
           .update([
@@ -343,6 +345,7 @@ export default {
         })
 
       } catch (error) {
+        console.trace(error)
         // Display a generic error message.
         this.alert = {
           type: 'error',

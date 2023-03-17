@@ -88,8 +88,6 @@ export default {
           password: form.password
         })
 
-        console.log(response)
-
         if (response.error) {
           alert.value = {
             type: 'error',

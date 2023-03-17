@@ -20,23 +20,12 @@ export default defineEventHandler(async (event) => {
       throw new Error('Invalid form data')
     }
 
-    // Get the project record by user ID, and limit to 1 record.
-    let { data: project } = await client
-      .from('projects')
-      .select('*')
-      .eq('user_id', form[2].data)
-      .limit(1)
-
-    // If the project record is not found, return an error message.
-    if (!project.length) {
-      throw new Error('Project not found')
-    }
-
-    // Get the first project record from the array.
-    project = project[0]
+    const file = form[0].data
+    const id = form[1].data
+    const userId = form[2].data
 
     // Resize the image to 1920x1080 resolution with a 16:9 aspect ratio.
-    const resized = await sharp(form[0].data)
+    const resized = await sharp(file)
       .resize({
         width: 1920,
         height: 1080,
@@ -56,7 +45,7 @@ export default defineEventHandler(async (event) => {
     const { data, error } = await client
       .storage
       .from('built-with-gpt')
-      .upload(`${project.user_id}/projects/${form[1].data}.webp`, webpBuffer, {
+      .upload(`${userId}/projects/${id}.webp`, webpBuffer, {
         contentType: 'image/webp'
       })
 
@@ -66,9 +55,9 @@ export default defineEventHandler(async (event) => {
       error
     }
   } catch (error) {
-    // Handle errors and return a proper response object with error message.
-    return {
-      error: error.message || 'Something went wrong'
-    }
+    throw createError({
+      statusCode: 500,
+      statusMessage: error.message
+    })
   }
 })
