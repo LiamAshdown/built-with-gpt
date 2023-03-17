@@ -14,5 +14,10 @@ body {
         .in-view {
             @apply scale-in-view;
         }
+
+        .in-view img {
+            transition: all 0.5s ease-in-out;
+            transform: scale(1.1);
+        }
     }
 }

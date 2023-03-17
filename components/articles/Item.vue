@@ -12,6 +12,7 @@
     <div>
       <div
         class="border-dashed border-b-2 border-spacing-x-2 border-black bg-gray-50
+        overflow-hidden
       "
       >
         <div class="w-full h-[200px]">
