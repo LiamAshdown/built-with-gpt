@@ -176,7 +176,7 @@ export default {
       formData.append('id', id)
       formData.append('userId', user.value.id)
 
-      const { data, error } = await $fetch('/api/upload-image', {
+      const { data, error } = await $fetch('/api/upload-project-image', {
         method: 'POST',
         body: formData
       })
