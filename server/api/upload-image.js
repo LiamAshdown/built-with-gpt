@@ -35,8 +35,7 @@ export default defineEventHandler(async (event) => {
     // Get the first project record from the array.
     project = project[0]
 
-    // Resize the image to 1920x1080 resolution with a 16:9 aspect ratio, and transparent background.
-    // The image will be contained within the specified dimensions without being stretched or cropped.
+    // Resize the image to 1920x1080 resolution with a 16:9 aspect ratio.
     const resized = await sharp(form[0].data)
       .resize({
         width: 1920,
