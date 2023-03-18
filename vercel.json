@@ -6,7 +6,7 @@
     },
     {
       "path": "/api/placeholder",
-      "schedule": "*/5 * * * *"
+      "schedule": "0 10 * * *"
     }
   ]
 }
