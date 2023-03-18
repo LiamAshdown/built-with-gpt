@@ -112,7 +112,7 @@ export default {
     watchEffect(async () => {
       if (user.value) {
         navigateTo({
-          name: 'projects-view'
+          name: 'projects-save-id'
         })
       }
     })
