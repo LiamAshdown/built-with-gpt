@@ -178,7 +178,7 @@ export default {
       formData.append('id', id)
       formData.append('userId', user.value.id)
 
-      const { data, error } = await $fetch('/api/upload-project-image', {
+      const { data, error } = await $fetch('/api/projects/upload-image', {
         method: 'POST',
         body: formData
       })
@@ -264,8 +264,6 @@ export default {
           type: image.headers.get('content-type')
         })
 
-        this.previousImageUrl = data.image_url
-
         this.form.title = data.title
         this.form.description = data.description
         this.form.websiteUrl = data.website_url
@@ -345,7 +343,6 @@ export default {
         })
 
       } catch (error) {
-        console.trace(error)
         // Display a generic error message.
         this.alert = {
           type: 'error',
