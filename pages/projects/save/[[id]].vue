@@ -128,8 +128,6 @@ export default {
       let flashMessage = 'Project created successfully! Your project is now live!'
 
       if (route.params.id) {
-        console.log('hit')
-        console.log('here', route.params.id)
         const { data, error } = await client
           .from('projects')
           .update([
@@ -137,6 +135,7 @@ export default {
               title: form.title,
               description: form.description,
               image_url: form.image_url,
+              placeholder_url: form.placeholder_url,
               website_url: form.website_url,
               user_id: user.value.id
             }
@@ -155,6 +154,7 @@ export default {
             title: form.title,
             description: form.description,
             image_url: form.image_url,
+            placeholder_url: form.placeholder_url,
             website_url: form.website_url,
             user_id: user.value.id
           }
@@ -178,14 +178,16 @@ export default {
       formData.append('id', id)
       formData.append('userId', user.value.id)
 
-      const { data, error } = await $fetch('/api/projects/upload-image', {
+      const { data, error, placeholderData, placeholderError } = await $fetch('/api/projects/upload-image', {
         method: 'POST',
         body: formData
       })
 
       return {
         uploadData: data,
-        uploadError: error
+        uploadError: error,
+        placeholderData,
+        placeholderError
       }
     }
 
@@ -310,17 +312,18 @@ export default {
         }
 
         // Upload image
-        const { uploadData, uploadError } = await this.uploadImage(this.form.image)
+        const { uploadData, uploadError, placeholderData, placeholderError } = await this.uploadImage(this.form.image)
 
-        if (uploadError) {
-          throw uploadError
+        if (uploadError || placeholderError) {
+          throw uploadError || placeholderError
         }
 
         // Download image
         const { downloadData, downloadError } = this.getImageURL(uploadData.path)
+        const { downloadData: placeholderDownloadData, placeholderDownloadError } = this.getImageURL(placeholderData.path)
 
-        if (downloadError) {
-          throw downloadError
+        if (downloadError || placeholderDownloadError) {
+          throw downloadError || placeholderDownloadError
         }
 
         // Save project
@@ -328,6 +331,7 @@ export default {
           title: this.form.title,
           description: this.form.description,
           image_url: downloadData.publicUrl,
+          placeholder_url: placeholderDownloadData.publicUrl,
           website_url: this.form.websiteUrl
         }
 

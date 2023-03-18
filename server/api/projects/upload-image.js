@@ -49,10 +49,27 @@ export default defineEventHandler(async (event) => {
         contentType: 'image/webp'
       })
 
+    // We also need to store a placeholder image for the project.
+    // The placeholder image will be used as a preview image for the project
+    // while the full image is being loaded.
+    const blurred = await sharp(file)
+      .blur(10)
+      .toBuffer()
+
+    // Upload the blurred image to the 'built-with-gpt' storage bucket in Supabase, and set type to webp.
+    const { data: placeholderData, error: placeholderError } = await client
+      .storage
+      .from('built-with-gpt')
+      .upload(`${userId}/projects/${id}-placeholder.webp`, blurred, {
+        contentType: 'image/webp'
+      })
+
     // Return the response object with the uploaded data or error message.
     return {
       data,
-      error
+      error,
+      placeholderData,
+      placeholderError
     }
   } catch (error) {
     throw createError({
