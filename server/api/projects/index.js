@@ -19,6 +19,17 @@ export default defineEventHandler(async (event) => {
         .select('*')
         .order('id', { ascending: false })
 
+  // We now need to go through each project and add our ref to the website URL.
+  // This is so the owner of the website can see where the traffic is coming from.
+  for (const project of data) {
+    // Turn the website URL into a URL object.
+    const url = new URL(project.website_url)
+    // Add a new query parameter to the URL.
+    url.searchParams.append('ref', 'builtwithgpt.io')
+    // Update the website URL in the project object.
+    project.website_url = url.toString()
+  }
+
   // Return the retrieved projects in a JSON object.
   return {
     projects: data
