@@ -15,7 +15,6 @@
       py-2 px-3
       text-sm
       rounded-md
-      h-9
       placeholder:text-gray-400
       hover:border-gray-400
       focus:border-neutral-300
@@ -33,7 +32,7 @@
       />
     </div>
     <template v-if="error">
-      <div class="mt-1 text-sm text-red-500 font-inter flex items-center gap-1">
+      <div class="text-sm text-red-500 font-inter flex items-center gap-1">
         <Icon
           name="heroicons:exclamation-circle"
           size="20"
@@ -42,7 +41,7 @@
       </div>
     </template>
     <template v-else-if="hint">
-      <div class="mt-1 text-xs text-gray-500 font-inter">
+      <div class="text-xs text-gray-500 font-inter">
         {{ hint }}
       </div>
     </template>
