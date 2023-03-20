@@ -9,7 +9,7 @@
       >
         <template v-if="!isEdit()">
           Submit a new project
-          <small class="text-sm text-gray-400 block font-medium">
+          <small class="text-sm text-gray-400 block font-light">
             Submitting a project will add it to the list of projects built with GPT-3.
           </small>
         </template>
