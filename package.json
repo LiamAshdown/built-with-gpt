@@ -19,7 +19,7 @@
     "eslint-plugin-n": "^15.6.1",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-vue": "^9.9.0",
-    "nuxt": "^3.2.3",
+    "nuxt": "^3.4.3",
     "nuxt-icon": "^0.3.2"
   },
   "dependencies": {
