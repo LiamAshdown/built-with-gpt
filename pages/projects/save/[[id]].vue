@@ -34,6 +34,14 @@
           hint="What is your project about?"
           :error="errors.description"
         />
+        <MultiSelect
+          v-model="form.categories"
+          label="Project Categories"
+          placeholder="Select categories"
+          hint="Select the categories that best describe your project."
+          :options="categories"
+          :error="errors.categories"
+        />
         <BaseInput
           v-model="form.websiteUrl"
           label="Website URL"
@@ -69,13 +77,14 @@
 
 <script>
 import BaseInput from '@/components/base/form/Input'
+import MultiSelect from '~~/components/base/form/MultiSelect'
 import BaseTextArea from '@/components/base/form/TextArea'
 import BaseForm from '@/components/base/form/Form'
 import Alert from '@/components/base/Alert'
 import Card from '@/components/card/Card'
 import BaseButton from '@/components/base/Button'
 import DropZone from '@/components/DropZone'
-import { validateDescription, validateTitle, validateWebsiteUrl, validateImage } from '~~/lib/utils'
+import { validateDescription, validateTitle, validateWebsiteUrl, validateImage, validateCategories, projectCategories } from '~~/lib/utils'
 
 export default {
   name: 'ProjectsSavePage',
@@ -86,6 +95,7 @@ export default {
     BaseTextArea,
     BaseButton,
     Card,
+    MultiSelect,
     DropZone
   },
   setup() {
@@ -140,7 +150,8 @@ export default {
               image_url: form.image_url,
               placeholder_url: form.placeholder_url,
               website_url: form.website_url,
-              user_id: user.value.id
+              user_id: user.value.id,
+              categories: form.categories
             }
           ])
           .eq('id', route.params.id)
@@ -159,7 +170,8 @@ export default {
             image_url: form.image_url,
             placeholder_url: form.placeholder_url,
             website_url: form.website_url,
-            user_id: user.value.id
+            user_id: user.value.id,
+            categories: form.categories
           }
         ])
 
@@ -242,8 +254,10 @@ export default {
         title: '',
         description: '',
         image: null,
-        websiteUrl: ''
+        websiteUrl: '',
+        categories: []
       },
+      categories: projectCategories(),
       loading: false,
       initialLoading: !!this.$route.params.id,
       alert: null,
@@ -272,6 +286,7 @@ export default {
         this.form.title = data.title
         this.form.description = data.description
         this.form.websiteUrl = data.website_url
+        this.form.categories = data.categories
       } catch (error) {
         let message = 'An error occurred while loading the project.'
 
@@ -309,8 +324,9 @@ export default {
         this.errors.description = validateDescription(this.form.description)
         this.errors.websiteUrl = validateWebsiteUrl(this.form.websiteUrl)
         this.errors.image = validateImage(this.form.image)
+        this.errors.categories = validateCategories(this.form.categories)
 
-        if (this.errors.title || this.errors.description || this.errors.websiteUrl || this.errors.image) {
+        if (this.errors.title || this.errors.description || this.errors.websiteUrl || this.errors.image || this.errors.categories) {
           return
         }
 
@@ -335,7 +351,8 @@ export default {
           description: this.form.description,
           image_url: downloadData.publicUrl,
           placeholder_url: placeholderDownloadData.publicUrl,
-          website_url: this.form.websiteUrl
+          website_url: this.form.websiteUrl,
+          categories: this.form.categories
         }
 
         const { error, flashMessage } = await this.saveProject(updates)

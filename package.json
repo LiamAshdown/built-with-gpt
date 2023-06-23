@@ -24,6 +24,7 @@
   },
   "dependencies": {
     "@vercel/analytics": "^0.1.11",
-    "sharp": "^0.31.3"
+    "sharp": "^0.31.3",
+    "vue-multiselect": "^3.0.0-beta.2"
   }
 }
