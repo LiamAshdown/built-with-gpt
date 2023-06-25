@@ -3,7 +3,15 @@
     <div class="text-lg font-bold text-black mb-2 text-center">
       All Categories
     </div>
-    <div class="flex justify-center md:flex-wrap gap-3 overflow-x-auto p-2">
+    <div
+      class="
+        flex justify-start md:justify-center
+        flex-nowrap md:flex-wrap
+        overflow-x-auto
+        gap-3
+        p-2
+      "
+    >
       <div
         v-for="(category, index) in categories"
         :key="index"
@@ -20,6 +28,8 @@
           items-center
           justify-center
           self-center
+          max-w-[200px]
+          whitespace-nowrap
         "
         :class="{
           'border-4 m-[-2px]': selectedCategory === category.name,
