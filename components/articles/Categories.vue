@@ -62,6 +62,10 @@ export default {
   },
   methods: {
     onCategoryClick(category) {
+      if (this.selectedCategory === category) {
+        category = 'all'
+      }
+
       this.selectedCategory = category
 
       this.$emit('filter-category', category)
